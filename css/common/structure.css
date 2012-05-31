@@ -1,0 +1,41 @@
+#site {width:100%; height:100%; margin:0;}
+
+#site .logo { position:fixed; width:200px; height:100px; top:0; left:0; background-repeat:no-repeat; background-position:left top; background-color:transparent; z-index:1000; }
+#site .logo.branco { background-image:url(../../img/logo_branco.png); }
+#site .logo.preto { background-image:url(../../img/logo_preto.png); }
+
+#site .menu_bg { position:fixed; width:155px; height:100%; display:none; background:url(../../img/menu_bg.png) repeat-y left top transparent; z-index:995; }
+#site .menu { position:fixed; width:75px; top:80px; right:-40px; z-index:999; }
+#site .menu .menu_container { position:relative; width:33px; top:0; right:-40px; padding:5px 0; background:#0e0f21; }
+#site .menu .menu_container li { width:100%; height:22px; margin:0; }
+#site .menu .menu_container li a { width:100%; height:100%; display:block; position:relative; background:url(../../img/menu_itens_bg.png) no-repeat center center transparent; }
+#site .menu .menu_container li a span { position:absolute; top:2px; right:24px; background-repeat:no-repeat; background-position:right center; background-image:url(../../img/menu_itens_tooltip.png); color:#ffffff; text-decoration:none; text-transform:lowercase; white-space:nowrap; padding:2px 11px 2px 6px; display:none; }
+#site .menu .menu_container li a:hover span { display:block; }
+
+#site .share { position:fixed; width:83px; height:30px; bottom:10px; left:10px; padding-top:57px; background:url(../../img/setas_teclado.png) no-repeat left top transparent; z-index:998; }
+#site .share a { width:25px; height:25px; background-image:url(../../img/redes_sociais.png); background-repeat:no-repeat; }
+#site .share .twitter { margin-left:3px; }
+#site .share .facebook { background-position:-27px 0; }
+#site .share .feed { background-position:-56px top; }
+
+#site .direcionais { position:fixed; width:100%; height:100%; z-index:997; }
+#site .direcionais a span { position:absolute; width:62px; height:62px; background-image:url(../../img/setas_mouse.png); background-repeat:no-repeat; }
+#site .direcionais a.cima { width:100%; height:100px; top:0; left:0; }
+#site .direcionais a.cima span { top:30px; left:0; background-position:right top; }
+#site .direcionais a.baixo { width:100%; height:100px; bottom:0; left:0; }
+#site .direcionais a.baixo span { bottom:30px; left:0; background-position:right bottom; }
+#site .direcionais a.esquerda { width:100px; height:100%; top:0; left:0; }
+#site .direcionais a.esquerda span { top:0; left:30px; background-position:left top; }
+#site .direcionais a.direita { width:100px; height:100%; bottom:0; right:0; }
+#site .direcionais a.direita span { top:0; right:30px; background-position:left bottom; }
+
+#site #content { position:absolute; width:100%; height:100%; z-index:1; }
+#site #content .area { height:100%; width:100%; overflow:hidden; }
+#site #content .area .tags { position:absolute; width:303px; height:303px; top:70%; left:60%; background-repeat:no-repeat; z-index:996; }
+#site #content .area .imagem_container { height:100%; left:0; position:absolute; }
+#site #content .area .imagem_container .imagem { height:100%; float:left; position:relative; }
+#site #content .area .imagem_container .imagem div { width:100%; height:100%; position:absolute; z-index:800; background:url('../../img/imagens_bg.png'); display:none; }
+#site #content .area .imagem_container .imagem img { position:absolute; top:0; bottom:0; left:0; right:0; margin:auto; z-index:900; }
+#site #content .area .imagem_container .imagem iframe { position:absolute; top:0; bottom:0; left:0; right:0; margin:auto; z-index:900; }
+#site #content .area .imagem_container .primeira { position:relative; background:url(../../img/imac.png) no-repeat center center transparent; top:10%; height:100%; float:left; }
+#site #content .area .imagem_container .primeira div { position:absolute; width:533px; height:301px; background:#000000; text-align:center; }

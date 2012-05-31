@@ -1,0 +1,46 @@
+.external-modal-overlay
+{
+	position:fixed;
+	top:0;
+	right:0;
+	bottom:0;
+	left:0;
+	height:100%;
+	width:100%;
+	margin:0;
+	padding:0;
+	background:#000;
+	opacity:.75;
+	filter: alpha(opacity=75);
+	-moz-opacity: 0.75;
+	z-index:101;
+}
+* html .external-modal-overlay
+{   
+	position: absolute;
+	height: expression(document.body.scrollHeight > document.body.offsetHeight ? document.body.scrollHeight : document.body.offsetHeight + 'px');
+}
+.external-modal-window
+{
+	position:fixed;
+	top:50%;
+	left:50%;
+	margin:0;
+	padding:0;
+	z-index:102;
+}
+* html .external-modal-window
+{
+	position:absolute;
+}
+.external-modal-close
+{
+	position:absolute;
+	width:63px;
+	height:19px;
+	right:4px;
+	top:0px;
+	display:block;
+	overflow:hidden;
+	cursor:pointer;
+}

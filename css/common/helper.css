@@ -1,0 +1,12 @@
+.db {display:block;}
+.dn {display:none;}
+.dbfl {display:block; float:left;}
+.dbfr {display:block; float:right;}
+.fl {float:left;}
+.fr {float:right;}
+.fn {float:none;}
+.pr {position:relative;}
+.pa {position:absolute;}
+.rep {display:block; text-indent:-9999px;}
+.repfl {display:block; float:left; text-indent:-9999px;}
+.repfr {display:block; float:right; text-indent:-9999px;}

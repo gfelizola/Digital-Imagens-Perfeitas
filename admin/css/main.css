@@ -1,0 +1,12 @@
+/* CSS Document */
+body { margin:0; font-size: 70%; font-family: "Trebuchet MS", "Helvetica", "Arial",  "Verdana", "sans-serif"; background-color:#fcfcfc; }
+table { font-size: 1.02em; }
+table input.text { width:95%; height:24px; }
+div#menu { padding:5px; float:left; }
+div#usuarioLogado { float:right; margin:5px; font-size:12px; text-align:right; margin-top:10px; }
+div.fabrica_atual { float:right; }
+table#tblLogin {margin-top:100px;}
+.ui-autocomplete { max-height: 130px; overflow-y: auto; }
+* html .ui-autocomplete { height: 120px; }
+.borda_excel { border: 1px solid #000000 ; }
+.titulo_area { font-size:18px; font-weight:bold; }

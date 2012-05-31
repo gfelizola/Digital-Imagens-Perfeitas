@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<config>
+	<tables>
+		<table name="Categorias" 	showAs="Categorias">
+			<colum name="Nome" 						showAs="Nome"							type="String" />
+			<colum name="Sigla" 					showAs="Sigla"							type="String" />
+			<colum name="Cor_Dentro" 				showAs="Cor Interna"					type="String" />
+			<colum name="Cor_Fora" 					showAs="Cor Externa"					type="String" />
+			<colum name="Cor_Logo" 					showAs="Cor do Logo"					type="String" />
+			<colum name="Ordem" 					showAs="Ordem"							type="Number" />
+		</table>
+		
+		<table name="Imagens" 	showAs="Imagens">
+			<colum name="Nome" 						showAs="Nome"							type="String" />
+			<colum name="Arquivo" 					showAs="Arquivo"						type="String" />
+			<colum name="Ordem" 					showAs="Ordem"							type="Number" />
+			<colum name="Categoria" 				showAs="Categoria"						type="Categorias" />
+			<colum name="Tipo" 						showAs="Tipo"							type="String" />
+		</table>
+		
+		<table name="Contatos" 	showAs="Contatos">
+			<colum name="Nome" 						showAs="Nome"							type="String" />
+			<colum name="Email" 					showAs="Email"							type="String" />
+			<colum name="Mensagem" 					showAs="Mensagem"						type="String" />
+		</table>
+		
+		<table name="Usuario_Admin" 	showAs="Usuários do Admin">
+			<colum name="Nome" 						showAs="Nome" 							type="String" />
+			<colum name="Login" 					showAs="Login" 							type="String" />
+			<colum name="Senha" 					showAs="Senha" 							type="String" />
+			<colum name="Regras" 					showAs="Regras" 						type="String" />
+		</table>
+		
+	</tables>
+</config>
