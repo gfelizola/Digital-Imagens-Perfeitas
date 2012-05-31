@@ -26,10 +26,10 @@ var Site = {
 		$('.menu_container').onePageNav({
 			changeHash: true,
 			currentClass: 'current_nav',
+			easing: 'easeInOutExpo',
 			begin: function(){
 				$('.imagem_container').animate({left:0}, 500, 'swing');
 			},
-			
 			change: function(){
 				Nav.Change();
 			}
@@ -48,13 +48,7 @@ var Site = {
 			if( $(this).hasClass('direita') ) props.right = 10 ;
 			if( $(this).hasClass('esquerda') ) props.bottom = 10 ;
 			
-			$(this).children('span').stop().animate(props, 300, 'swing', function(e){
-				if( $(this).parent('a').hasClass('cima') ){
-					$.scrollTo({top:'-=50px', left:0} , 400);
-				} else if( $(this).parent('a').hasClass('baixo') ){
-					$.scrollTo({top:'+=50px', left:0} , 400);
-				}
-			});
+			$(this).children('span').stop().animate(props, 300, 'swing');
 			currentSeta = this ;
 		},function(e){
 			var props = {opacity:0};
@@ -65,8 +59,6 @@ var Site = {
 			
 			$(this).children('span').stop().animate(props, 300, 'swing');
 			currentSeta = null ;
-			
-			$.scrollTo(current_nav, 400);
 			
 		}).click(function(e) {
 			var atual = $('.menu_container').find('li.current_nav');
@@ -95,25 +87,26 @@ var Site = {
 				Nav.Change();
 			}
 					
-			if( posAtual > 0 ){
-				$(' .tags, .logo').stop().fadeOut();
-			} else {
-				$(' .tags, .logo').stop().fadeIn();
-			}
+			
 			
 		}).attr('href','javascript:void(0)');
 		
-		$(window).keyup(function (e) {
+		$(window).keydown(function (e) {
 			usingKey = true ;
 			if (e.keyCode == 38) {
 				$('.direcionais a.cima').click();
+				e.preventDefault();
 			} else if (e.keyCode == 40) {
 				$('.direcionais a.baixo').click();
+				e.preventDefault();
 			} else if (e.keyCode == 37) {
 				$('.direcionais a.esquerda').click();
+				e.preventDefault();
 			} else if (e.keyCode == 39) {
 				$('.direcionais a.direita').click();
+				e.preventDefault();
 			}
+			
 			usingKey = false ;
 		});
 		
@@ -190,13 +183,14 @@ var Site = {
 var Nav = {
 	Change: function(){
 		var atual = $('.menu_container').find('li.current_nav').find('a');
-
 		var at = atual;
+		var oldNav = '' ;
 		if( current_nav != at.attr('href') ){
+			oldNav = current_nav ;
 			current_nav = at.attr('href') ;
 			posAtual = 0;
 			
-			$('.imagem_container').animate({left:0}, 500, 'swing');
+			$('.imagem_container').delay(300).animate({left:0}, 1200, 'easeInOutExpo');
 			Nav.HideSeta('esquerda');
 			
 			if( current_nav == '#home' || current_nav == '#contato' ){
@@ -222,7 +216,10 @@ var Nav = {
 			if( corPelaDiv != undefined ) corLogo = corPelaDiv ;
 			$('.logo').removeClass('branco').removeClass('preto').addClass( corLogo.toLowerCase() );
 			
-			$('.imagem div').fadeOut();
+			$('.logo').stop().fadeIn();
+			if( oldNav != '' ){
+				$( oldNav + ' .tags').stop().delay(1500).fadeIn();
+			}
 			
 			Nav.ColorMenu();
 			Nav.UpdateShare();
@@ -242,14 +239,19 @@ var Nav = {
 		var hashStr = current_nav ;
 		if( imgId != undefined ) hashStr += '/' + imgId ;
 		
-		$(current_nav + ' .imagem_container').animate({left:pos}, 500, 'swing', function(){
+		$(current_nav + ' .imagem_container').animate({left:pos}, 800, 'easeInOutExpo', function(){
 			isMoving = false ;
 			window.location.hash = hashStr ;
 			
 			Nav.UpdateShare();
 		});
 		
-		$(current_nav + ' .imagem_container .imagem div').fadeIn();
+		//$(current_nav + ' .imagem_container .imagem div').fadeIn();
+		if( posAtual > 0 ){
+			$(' .tags, .logo').stop().fadeOut();
+		} else {
+			$(' .tags, .logo').stop().fadeIn();
+		}
 	},
 	
 	UpdateShare: function(){

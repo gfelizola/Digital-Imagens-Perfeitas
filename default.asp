@@ -54,6 +54,7 @@ Set Dao = new GlobalDAO
 		<![endif]-->
 		
 		<script type="text/javascript" 			src="js/lib/jquery/jquery-1.7.2.min.js"		></script>
+		<script type="text/javascript" 			src="js/lib/jquery/jquery.easing.js"		></script>
 		<script type="text/javascript" 			src="js/lib/jquery/jquery.scrollTo.js"		></script>
 		<script type="text/javascript" 			src="js/lib/jquery/jquery.nav.js"			></script>
 		<script type="text/javascript" 			src="js/lib/jquery/jquery.validate.js"		></script>
@@ -119,7 +120,7 @@ Set Dao = new GlobalDAO
 						If Imagens.Count > 0 Then
 							For Each Img In Imagens.Items
 								
-								OutL( "<div class='imagem' data='" & Img.Item("Codigo") & "'><div></div>" )
+								OutL( "<div class='imagem' data='" & Img.Item("Codigo") & "'>" )
 								
 								If InStr( Img.Item("Arquivo"), "youtube" ) > 0 Then
 									QS = Split( Img.Item("Arquivo"), "?")
