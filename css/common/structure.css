@@ -35,7 +35,7 @@
 #site #content .area .imagem_container { height:100%; left:0; position:absolute; }
 #site #content .area .imagem_container .imagem { height:100%; float:left; position:relative; }
 #site #content .area .imagem_container .imagem div { width:100%; height:100%; position:absolute; z-index:800; background:url('../../img/imagens_bg.png'); display:none; }
-#site #content .area .imagem_container .imagem img { position:absolute; top:0; bottom:0; left:0; right:0; margin:auto; z-index:900; }
+#site #content .area .imagem_container .imagem img { position:absolute; top:0; bottom:0; left:0; right:0; margin:auto; height:80%; z-index:900; }
 #site #content .area .imagem_container .imagem iframe { position:absolute; top:0; bottom:0; left:0; right:0; margin:auto; z-index:900; }
 #site #content .area .imagem_container .primeira { position:relative; background:url(../../img/imac.png) no-repeat center center transparent; top:10%; height:100%; float:left; }
 #site #content .area .imagem_container .primeira div { position:absolute; width:533px; height:301px; background:#000000; text-align:center; }
