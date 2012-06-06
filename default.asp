@@ -97,7 +97,7 @@ Set Dao = new GlobalDAO
 				<div id="home" class="area gradiente pr">
 					<div class="tags"></div>
 					<div class="imagem_container">
-						<div class="imagem"><img src="img/olho_digital.gif" /></div>
+						<div class="imagem"><img src="img/olho_digital_separado.png" /></div>
 					</div>
 				</div>
 				
