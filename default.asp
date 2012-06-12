@@ -151,17 +151,20 @@ Set Dao = new GlobalDAO
 						<h2 class="titulo">CONTATO</h2>
 						<form id="form_contato" action="envia.asp" method="post">
 							<fieldset>
-								<label>Email:
+								<label>
+									<span>Email:</span>
 									<input type="text" name="Email" id="Email" class="required email" title="O campo Email é obrigatório e deve ser um e-mail válido" value="" />
 								</label>
 							</fieldset>
 							<fieldset>
-								<label>Nome:
+								<label>
+									<span>Nome:</span>
 									<input type="text" name="Nome" id="Nome" class="required" title="O campo Nome é obrigatório" value="" />
 								</label>
 							</fieldset>
 							<fieldset>
-								<label>Mensagem:
+								<label>
+									<span>Mensagem:</span>
 									<textarea name="Mensagem" id="Mensagem" class="required" title="O campo Mensagem é obrigatório"></textarea>
 								</label>
 							</fieldset>

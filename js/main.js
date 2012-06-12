@@ -30,7 +30,7 @@ var Site = {
 			currentClass: 'current_nav',
 			easing: ease,
 			begin: function(){
-				$('.imagem_container').animate({left:0}, 500, 'swing');
+				$('.imagem_container').stop().delay(100).animate({left:0}, 1200, 'linear');
 			},
 			change: function(){
 				Nav.Change();
@@ -164,7 +164,7 @@ var Site = {
 			
 			$('.tags').css({
 				left: tagsLeft + 'px',
-				top:  ( vh / 2 - 25 ) + 'px'
+				top:  ( vh / 2 - 37 ) + 'px'
 			});
 			
 			$( '.direcionais a' ).each(function(index, element) {
@@ -193,7 +193,6 @@ var Nav = {
 			current_nav = at.attr('href') ;
 			posAtual = 0;
 			
-			$('.imagem_container').delay(300).animate({left:0}, 1200, 'easeInOutExpo');
 			Nav.HideSeta('esquerda');
 			
 			if( current_nav == '#home' || current_nav == '#contato' ){
@@ -217,7 +216,9 @@ var Nav = {
 			var corLogo = 'branco' ;
 			var corPelaDiv = $(current_nav).attr('logo') ;
 			if( corPelaDiv != undefined ) corLogo = corPelaDiv ;
-			$('.logo').removeClass('branco').removeClass('preto').addClass( corLogo.toLowerCase() );
+			$('.logo').removeClass('branco').removeClass('preto').addClass( corLogo.toLowerCase() ).stop().animate({left:0}, 800, ease);
+			$('.tags').stop().animate({left:tagsLeft}, 800, ease);
+
 			/*
 			$('.logo').stop().fadeIn();
 			if( oldNav != '' ){
@@ -242,13 +243,13 @@ var Nav = {
 		var hashStr = current_nav ;
 		if( imgId != undefined ) hashStr += '/' + imgId ;
 		
-		$(current_nav + ' .imagem_container, .logo').animate({left:pos}, 800, ease, function(){
+		$(current_nav + ' .imagem_container, .logo').stop().animate({left:pos}, 800, ease, function(){
 			isMoving = false ;
 			window.location.hash = hashStr ;
 			Nav.UpdateShare();
 		});
 		
-		$(current_nav + ' .tags').animate({left:pos + tagsLeft}, 800, ease);
+		$(current_nav + ' .tags').stop().animate({left:pos + tagsLeft}, 800, ease);
 		
 		//$(current_nav + ' .imagem_container .imagem div').fadeIn();
 		/*

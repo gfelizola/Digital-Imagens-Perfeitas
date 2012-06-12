@@ -2,3 +2,5 @@ _notes/*
 */_notes/*
 arquivos/logs
 arquivos/logs/*
+*.sublime-project
+*.sublime-workspace
